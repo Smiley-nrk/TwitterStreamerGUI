@@ -27,7 +27,7 @@ class TweetList extends Component{
   }
 
   async startTweets(){
-    const eventSource = new EventSource('http://localhost:8080/getTweets');
+    const eventSource = new EventSource('https://twitterstreamapp.herokuapp.com/getTweets');
     eventSource.onmessage = (event: any) => {
       const tweet = JSON.parse(event.data).data;
       if(tweet != null){
